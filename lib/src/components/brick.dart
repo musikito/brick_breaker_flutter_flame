@@ -1,5 +1,6 @@
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
+import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
 
 import '../brick_breaker.dart';
@@ -24,10 +25,12 @@ class Brick extends RectangleComponent
   void onCollisionStart(
       Set<Vector2> intersectionPoints, PositionComponent other) {
     super.onCollisionStart(intersectionPoints, other);
+    FlameAudio.play('brick_break.mp3');
     removeFromParent();
     game.score.value++;
 
     if (game.world.children.query<Brick>().length == 1) {
+      FlameAudio.play('win.mp3');
       game.playState = PlayState.won;
       game.world.removeAll(game.world.children.query<Ball>());
       game.world.removeAll(game.world.children.query<Bat>());

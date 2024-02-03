@@ -4,14 +4,13 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../brick_breaker.dart';
 import '../config.dart';
-import 'overlay_screen.dart'; // Add this import
-import 'score_card.dart'; // And this one too
+import 'overlay_screen.dart';
+import 'score_card.dart';
 
 class GameApp extends StatefulWidget {
-  // Modify this line
   const GameApp({super.key});
 
-  @override // Add from here...
+  @override
   State<GameApp> createState() => _GameAppState();
 }
 
@@ -22,7 +21,7 @@ class _GameAppState extends State<GameApp> {
   void initState() {
     super.initState();
     game = BrickBreaker();
-  } // To here.
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +83,7 @@ class _GameAppState extends State<GameApp> {
                       ),
                     ),
                   ],
-                ), // To here.
+                ),
               ),
             ),
           ),

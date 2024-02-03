@@ -8,6 +8,7 @@ environment:
 
 dependencies:
   flame: ^1.11.0
+  flame_audio: ^2.1.7
   flutter:
     sdk: flutter
   flutter_animate: ^4.2.0
@@ -19,4 +20,9 @@ dev_dependencies:
   flutter_lints: ^3.0.1
 
 flutter:
+  assets:
+    - assets/audio/game_over.mp3
+    - assets/audio/brick_break.mp3
+    - assets/audio/win.mp3
+
   uses-material-design: true

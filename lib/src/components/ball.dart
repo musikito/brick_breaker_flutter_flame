@@ -1,6 +1,7 @@
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flame/effects.dart';
+import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
 
 import '../brick_breaker.dart';
@@ -48,6 +49,7 @@ class Ball extends CircleComponent
             delay: 0.35,
             onComplete: () {
               game.playState = PlayState.gameOver;
+              FlameAudio.play('game_over.mp3');
             }));
       }
     } else if (other is Bat) {
